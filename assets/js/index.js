@@ -5,12 +5,12 @@ var ReactDOM = require('react-dom');
 var BookModule = React.createClass({
     render: function() {
         return (
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6">
+            <div className="container">
+                <div className="row">
+                    <div className="col-md-6 col-sm-12">
                         <h1>Welcome to our book store!</h1>
                     </div>
-                    <div class="col-md-6">
+                    <div className="col-md-6 col-sm-12">
                         <p className="lead">We have many elegant tomes!</p>
                         <button className="btn btn-succeed">button</button>
                     </div>
