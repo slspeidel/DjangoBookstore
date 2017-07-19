@@ -38,12 +38,13 @@ module.exports = {
                 //node_modules. That would take a long time.
                 exclude: /node_modules/, 
                 //use the babel loader 
-                loader: 'babel-loader', 
+                loader: 'babel-loader',
                 query: {
                     //specify that we will be dealing with React code
                     presets: ['react'] 
                 }
-            }
+            },
+            {loader: 'react-hot'},
         ]
     },
     
