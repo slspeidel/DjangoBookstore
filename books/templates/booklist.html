@@ -1,14 +1,40 @@
 {% load render_bundle from webpack_loader %}
+{% load app_filters %}
+{% load jsonify %}
+{% load static %}
+
 <!DOCTYPE html>
 
 <html>
     <head>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" />
     </head>
     <body>
-        <div id="bookapp"></div>
-        {% render_bundle 'main' %}
-
+        <div class="row">
+            <div class="col-md-12">
+                {% block title %}<center><h1>{{title}}</h1></center>{% endblock %}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 col-sm-12">
+                <div>
+                    <p><h3>Welcome to our store!</h3></p>
+                    <p class="lead">We have {{count}} elegant tomes!</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-sm-12">
+                <div id="bookapp">
+                    <p><h3>Featured books:</h3></p>
+                </div>
+                <div  class="list-group">
+                    {% for book in stock %}
+                        <div class="list-group-item"><strong>{{ book.title|safe }}</strong>&nbsp;by {{book.author|safe}}</div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
     </body>
 </html>

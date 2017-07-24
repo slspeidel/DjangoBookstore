@@ -155,4 +155,4 @@ crashlytics-build.properties
 fabric.properties
 
 # Database
-*.sqllite3
+*.sqlite3

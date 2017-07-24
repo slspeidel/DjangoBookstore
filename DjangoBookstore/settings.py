@@ -28,7 +28,6 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-
 # Application definition
 
 INSTALLED_APPS = (
@@ -45,6 +44,7 @@ INSTALLED_APPS = (
 
 STATICFILES_DIRS = (
     #This lets Django's collectstatic store our bundles
+    os.path.join(BASE_DIR, "static"),
     os.path.join(BASE_DIR, 'assets'), 
 )
 
@@ -72,6 +72,8 @@ MIDDLEWARE_CLASSES = (
 )
 
 ROOT_URLCONF = 'DjangoBookstore.urls'
+
+ADMIN_SITE_HEADER = 'Bookstore administration'
 
 TEMPLATES = [
     {
